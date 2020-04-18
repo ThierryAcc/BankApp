@@ -5,6 +5,9 @@ public class CreditAccount extends Account {
 
     public CreditAccount(String accountNumber, long balance, int creditLine) {
         super(accountNumber, balance);
+        if(creditLine < 0) {
+            throw new IllegalArgumentException();
+        }
         this.creditLine = creditLine;
     }
 
